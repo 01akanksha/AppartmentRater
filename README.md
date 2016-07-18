@@ -1,5 +1,5 @@
 # AppartmentRater
-Copyright (c) 2016 Akanksha
+Copyright (c) 2016 Akanksha and Smitha
 
 Used to get detailed information about appartments in your area.
 
