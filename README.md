@@ -25,5 +25,9 @@ smitha@pdx.edu
 
 License Information: 
 Please check the below link to get the file license in this distribution.
+Link:https://github.com/01akanksha/AppartmentRater/blob/master/LICENSE
+
+Source Code: 
+The source code can be found at the following repository Link for repository:
 Link:
 
