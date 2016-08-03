@@ -29,5 +29,23 @@ Link:https://github.com/01akanksha/AppartmentRater/blob/master/LICENSE
 
 Source Code: 
 The source code can be found at the following repository Link for repository:
-Link:
+Link:https://github.com/01akanksha/AppartmentRater/commit/047bb8897d84932cda94517e82d192fd9c2735d5
+
+Latest .apk file: 
+
+Developer Documents: 
+
+User Documents:
+
+Build Instruction: 
+
+User Manual
+
+Pre-requisites:
+
+Future Enhancements:
+
+Issue Tracker/Bug Tracker: 
+
+FINAL PRESENTATION:
 
