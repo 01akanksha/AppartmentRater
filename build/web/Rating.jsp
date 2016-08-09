@@ -25,7 +25,7 @@
             <tr><td><b>Bed</b></td><td><input name="bed" type="text" value="${bed}"/></td></tr>
             <tr><td><b>Rent</b></td><td><input name="rent" type="text" value="${rent}"/></td></tr>
             <tr><td><b>Contact Person Number</b></td><td><input name="contact" type="text" value="${contact}"/></td></tr>            
-            <tr><td><b>Apartment ID</b></td><td><input name="contact" type="text" value="${Id}"/></td></tr>            
+            <tr><td><b>Apartment ID</b></td><td><input name="id" type="text" value="${Id}" /></td></tr>            
             <tr><td><input type="text" name="Rate"></input>Stars</td><td><input type="submit" value="Rate"></td></tr>
         </table>
         </form>
