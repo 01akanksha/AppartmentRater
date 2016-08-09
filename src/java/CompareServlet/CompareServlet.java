@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AreaApartmentServlet;
+package CompareServlet;
 
-//import Details;
+import AreaApartmentServlet.Details;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -27,15 +25,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author A
  */
-@WebServlet(name = "AreaApartmentServlet", urlPatterns = {"/AreaApartmentServlet"})
-public class AreaApartmentServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    String user_ID_from_DB = "";
-    String user_password_from_DB = "";
-    Connection connection = null;
-    Statement querySmt = null;
-    ResultSet result = null;
-    boolean set=false,noset=false;
+@WebServlet(name = "CompareServlet", urlPatterns = {"/CompareServlet"})
+public class CompareServlet extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -53,10 +45,10 @@ public class AreaApartmentServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AreaApartmentServlet</title>");            
+            out.println("<title>Servlet CompareServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AreaApartmentServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet CompareServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -73,9 +65,8 @@ public class AreaApartmentServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
+            throws ServletException, IOException {
         processRequest(request, response);
-        
     }
 
     /**
@@ -91,11 +82,16 @@ public class AreaApartmentServlet extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         PrintWriter pw=response.getWriter();
-        //String user_id = request.getParameter("id").trim();
-        String Area = request.getParameter("Location").trim();        
-        String beds = request.getParameter("Beds").trim();        
-        //pw.println(Area);
-        
+        String a[]=request.getParameterValues("Multi");
+        String a1=a[0];
+        String a2=a[1];
+        String b[]=a1.split(",");
+        String aptName1=b[0];
+        String Id1=b[1];
+        String b1[]=a2.split(",");
+        String aptName2=b1[0];
+        String Id2=b1[1];
+        System.out.println(aptName1+Id1+aptName2+Id2);
          try {
             //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
             //String url = "jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=\" + \"C:\\Users\\A\\Documents\\Login.accdb";
@@ -105,24 +101,24 @@ public class AreaApartmentServlet extends HttpServlet {
             Connection connection = DriverManager.getConnection(db);            
             if (connection.equals(null)) {
                 //System.out.println("connection was failed");                
-            } else {   
-                //System.out.println(Area);
-                String a[]=Area.split(",");
-                //System.out.println(a[0]);
-                int bed=Integer.valueOf(beds);
-                
-                PreparedStatement statement=connection.prepareStatement("Select * from details where CityStateOrCode LIKE ? And bed = ?");
-                statement.setString(1, a[0]+"%");
-                statement.setInt(2, bed);
+            } else {                                   
+                PreparedStatement statement=connection.prepareStatement("Select * from details where Apartmentname= ? And ID = ?");
+                statement.setString(1, aptName1);
+                statement.setInt(2, Integer.parseInt(Id1));
                 ResultSet r= statement.executeQuery();
                 ArrayList<Details> details=new ArrayList<Details>();
-                
+                PreparedStatement statement1=connection.prepareStatement("Select * from details where Apartmentname= ? And ID = ?");
+                statement1.setString(1, aptName2);
+                statement1.setInt(2, Integer.parseInt(Id2));
+                ResultSet r1= statement1.executeQuery();
+                ArrayList<Details> details1=new ArrayList<Details>();
                 if( r.equals(null))
                 {
                     pw.println("no data");
                 }
                 else{
-                    while(r.next())
+                    
+                     while(r.next())
                     {
                        Details d=new Details();
                        d.ID= r.getInt("ID");
@@ -323,32 +319,233 @@ public class AreaApartmentServlet extends HttpServlet {
                        d.contact=r.getString("contact");
                        d.vaccancies=r.getInt("numberOfVacancies");
                        details.add(d);
-                    }                    
-                    request.setAttribute("DetailsList",details);
-if(request.getParameter("Search")!=null)                    
-{
-    RequestDispatcher rd=request.getServletContext().getRequestDispatcher("/DisplayDetails.jsp");
+                    }
+                    
+                   for(int i=1;1<details.size();i++) 
+                   {
+                       System.out.println(details.get(i));
+                   }
+                }
+if( r1.equals(null))
+                {
+                    pw.println("no data");
+                }
+                else{
+                    
+                     while(r1.next())
+                    {
+                       Details d1=new Details();
+                       d1.ID= r1.getInt("ID");
+                       d1.location=r1.getString("location");
+                       d1.apartmentName=r1.getString("ApartmentName");
+                       d1.cityStateOrCode=r1.getString("CityStateOrCode");
+                       d1.bath=r1.getInt("bath");
+                       d1.bed=r1.getInt("bed");
+                       d1.area=r1.getString("area(sqfeet)");
+                       d1.patio=r1.getString("patio");
+                       if(d1.patio.equalsIgnoreCase("true"))
+                       {
+                           d1.patio="Yes";
+                       }else
+                       {
+                           d1.patio="No";
+                       }
+                       d1.pool=r1.getString("pool");
+                       if(d1.pool.equalsIgnoreCase("true"))
+                       {
+                           d1.pool="Yes";
+                       }else
+                       {
+                           d1.pool="No";
+                       }
+                       d1.rent=r1.getString("rent");
+                       d1.gym=r1.getString("gym");
+                        if(d1.gym.equalsIgnoreCase("true"))
+                       {
+                           d1.gym="Yes";
+                       }else
+                       {
+                           d1.gym="No";
+                       }
+                       d1.washerDryer=r1.getString("washerDryer");
+                        if(d1.washerDryer.equalsIgnoreCase("true"))
+                       {
+                           d1.washerDryer="Yes";
+                       }else
+                       {
+                           d1.washerDryer="No";
+                       }
+                       d1.dishWasher=r1.getString("dishwasher");
+                        if(d1.dishWasher.equalsIgnoreCase("true"))
+                       {
+                           d1.dishWasher="Yes";
+                       }else
+                       {
+                           d1.dishWasher="No";
+                       }
+                       d1.review=r1.getString("review");
+                       d1.coveredParking=r1.getString("coveredParking");
+                        if(d1.coveredParking.equalsIgnoreCase("true"))
+                       {
+                           d1.coveredParking="Yes";
+                       }else
+                       {
+                           d1.coveredParking="No";
+                       }
+                       d1.garageParking=r1.getString("GarageParking");
+                        if(d1.garageParking.equalsIgnoreCase("true"))
+                       {
+                           d1.garageParking="Yes";
+                       }else
+                       {
+                           d1.garageParking="No";
+                       }
+                       d1.catRent=r1.getString("catRent");
+                        if(d1.catRent.equalsIgnoreCase("true"))
+                       {
+                           d1.catRent="Yes";
+                       }else
+                       {
+                           d1.catRent="No";
+                       }
+                       d1.dogRent=r1.getString("dogRent");
+                        if(d1.dogRent.equalsIgnoreCase("true"))
+                       {
+                           d1.dogRent="Yes";
+                       }else
+                       {
+                           d1.dogRent="No";
+                       }
+                       d1.additionalStorage=r1.getString("additionalStorage");
+                        if(d1.additionalStorage.equalsIgnoreCase("true"))
+                       {
+                           d1.additionalStorage="Yes";
+                       }else
+                       {
+                           d1.additionalStorage="No";
+                       }
+                       d1.barbeque=r1.getString("barbeque");
+                        if(d1.barbeque.equalsIgnoreCase("true"))
+                       {
+                           d1.barbeque="Yes";
+                       }else
+                       {
+                           d1.barbeque="No";
+                       }
+                       d1.park=r1.getString("park");
+                        if(d1.park.equalsIgnoreCase("true"))
+                       {
+                           d1.park="Yes";
+                       }else
+                       {
+                           d1.park="No";
+                       }
+                       d1.firePlace=r1.getString("firePlace");
+                        if(d1.firePlace.equalsIgnoreCase("true"))
+                       {
+                           d1.firePlace="Yes";
+                       }else
+                       {
+                           d1.firePlace="No";
+                       }
+                       d1.leaseLength=r1.getString("leaseLength");
+                       d1.microwave=r1.getString("microwave");
+                        if(d1.microwave.equalsIgnoreCase("true"))
+                       {
+                           d1.microwave="Yes";
+                       }else
+                       {
+                           d1.microwave="No";
+                       }
+                       d1.onsiteMaintenance=r1.getString("onsiteMaintanence");
+                        if(d1.onsiteMaintenance.equalsIgnoreCase("true"))
+                       {
+                           d1.onsiteMaintenance="Yes";
+                       }else
+                       {
+                           d1.onsiteMaintenance="No";
+                       }
+                       d1.onlineMaintenance=r1.getString("onlineMaintanenceRequest");
+                        if(d1.onlineMaintenance.equalsIgnoreCase("true"))
+                       {
+                           d1.onlineMaintenance="Yes";
+                       }else
+                       {
+                           d1.onlineMaintenance="No";
+                       }
+                       d1.highSpeedInternet=r1.getString("highSpeedInternetAccess");
+                        if(d1.highSpeedInternet.equalsIgnoreCase("true"))
+                       {
+                           d1.highSpeedInternet="Yes";
+                       }else
+                       {
+                           d1.highSpeedInternet="No";
+                       }
+                       d1.onlinePayment=r1.getString("onlinePaymentWithFreeECheckOpt");
+                        if(d1.onlinePayment.equalsIgnoreCase("true"))
+                       {
+                           d1.onlinePayment="Yes";
+                       }else
+                       {
+                           d1.onlinePayment="No";
+                       }
+                       d1.clubHouse=r1.getString("clubHouse");
+                        if(d1.clubHouse.equalsIgnoreCase("true"))
+                       {
+                           d1.clubHouse="Yes";
+                       }else
+                       {
+                           d1.clubHouse="No";
+                       }
+                       d1.lounge=r1.getString("lounge");
+                        if(d1.lounge.equalsIgnoreCase("true"))
+                       {
+                           d1.lounge="Yes";
+                       }else
+                       {
+                           d1.lounge="No";
+                       }
+                       d1.airConditioning=r1.getString("airConditioning");
+                        if(d1.airConditioning.equalsIgnoreCase("true"))
+                       {
+                           d1.airConditioning="Yes";
+                       }else
+                       {
+                           d1.airConditioning="No";
+                       }
+                       d1.heaters=r1.getString("heaters");
+                        if(d1.heaters.equalsIgnoreCase("true"))
+                       {
+                           d1.heaters="Yes";
+                       }else
+                       {
+                           d1.heaters="No";
+                       }
+                       d1.windowCovering=r1.getString("windowCovering");
+                        if(d1.windowCovering.equalsIgnoreCase("true"))
+                       {
+                           d1.windowCovering="Yes";
+                       }else
+                       {
+                           d1.windowCovering="No";
+                       }
+                       d1.flooring=r1.getString("flooring");
+                       d1.contact=r1.getString("contact");
+                       d1.vaccancies=r1.getInt("numberOfVacancies");
+                       details1.add(d1);
+                    }
+                                       
+                    request.setAttribute("DetailsList1",details);
+                    request.setAttribute("DetailsList2",details1);
+                    RequestDispatcher rd=request.getServletContext().getRequestDispatcher("/CompareResult.jsp");
                     rd.forward(request,response);}
-else
-{
-    PreparedStatement statement1=connection.prepareStatement("Select ID,ApartmentName from details where CityStateOrCode LIKE ? And bed = ?");
-                statement1.setString(1, a[0]+"%");
-                statement1.setInt(2, bed);
-                ResultSet r1= statement1.executeQuery();
-                List<String> a1 =null;
-             a1=new ArrayList<String>();
-             String adding=null;
-             while(r1.next())
-             {
-                 adding=r1.getString("ApartmentName")+","+r1.getInt("ID");              
-               a1.add(adding);
-             }
-            request.setAttribute("AptName",a1);
-    RequestDispatcher rd=request.getServletContext().getRequestDispatcher("/Compare.jsp");
-                    rd.forward(request,response);
-}
-                }                              
-            }
+
+            
+                }
+            
+                
+            
+            
         } catch (Exception exception) {
             exception.printStackTrace();
         } finally {

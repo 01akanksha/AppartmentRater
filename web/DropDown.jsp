@@ -12,10 +12,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
-        <h1>Select the Area from the drop down to search for the apartments</h1>
+        <table>
+            <tr>
+                <td><h1>Select the Area from the drop down to search for the apartments</h1></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>  
+                <td style="text-align: right" ><a href="login.jsp">logout</a>    </td>
+        </tr>
+        </table>
         <form action="AreaApartmentServlet" method="post">
-<table>
+<table>       
 <tr>
 <td>Location:</td>
 <td><select type="text" name="Location"/>
@@ -24,11 +29,41 @@
                                 <option>${item}</option>
                             </c:forEach>
 </td>
+<td>No of Beds</td>
+<td><select type="text" name="Beds"/>
+<option selected value="SELECT">SELECT</option>
+<c:forEach var="item1" items="${beds}">
+                                <option>${item1}</option>
+                            </c:forEach>
+</td>
+
+</tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+
+<tr>
+    <td ><input type="submit" value="Search" name="Search"></td>
 </tr>
 <tr>
-<td colspan="2" align="center"><input type="submit" value="Search"></td>
+    <td>To Compare:</td>
 </tr>
+<tr>
+    <td><input type="submit" value="Compare" name="Compare"/></td>
+                </tr>
 </table>
 </form>
+        
     </body>
 </html>

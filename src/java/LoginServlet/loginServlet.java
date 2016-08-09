@@ -148,25 +148,31 @@ public class loginServlet extends HttpServlet {
             Connection connection1 = DriverManager.getConnection(db1);                                     
              Statement querySmt1 = connection1.createStatement();
              ResultSet result1=querySmt1.executeQuery("Select distinct CityStateOrCode from details");
+             ResultSet result2=querySmt1.executeQuery("Select distinct bed from details");
              List<String> a =null;
              a=new ArrayList<String>();
+             List<Integer> b =null;
+             b=new ArrayList<Integer>();
              String adding=null;
+             int adding1=0;
              if(result1==null)
              {
              System.out.println("no data");
              }
             while(result1.next())
             {
-               adding=result1.getString("CityStateOrCode");
-               a.add(adding);               
+               adding=result1.getString("CityStateOrCode");              
+               a.add(adding);
+               
             }
-            System.out.println(a.size());
-            for(int i=0;i<a.size();i++)
+            while(result2.next())
             {
-                System.out.println(a.get(i)+i);
+               adding1=result2.getInt("bed");
+               b.add(adding1); 
             }
-            
+                       
             request.setAttribute("locations", a);
+            request.setAttribute("beds", b);
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/DropDown.jsp");
             rd.forward(request, response);
                     } 
