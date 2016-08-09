@@ -51,4 +51,4 @@ And Once webApp is done we would like to convert it to the Mobile App.
 Issue Tracker/Bug Tracker: 
 
 FINAL PRESENTATION:
-
+https://github.com/01akanksha/AppartmentRater/blob/master/ApartmentRater.pptx
