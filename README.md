@@ -31,9 +31,8 @@ Source Code:
 The source code can be found at the following repository Link for repository:
 Link:https://github.com/01akanksha/AppartmentRater/commit/047bb8897d84932cda94517e82d192fd9c2735d5
 
-Latest .apk file: 
-
 User Manual(With Build Instructions)
+https://github.com/01akanksha/AppartmentRater/blob/master/UserManualAndBuildInstructions.docx 
 
 Pre-requisites:
 You should have -
@@ -48,7 +47,7 @@ Need to improve the UI
 Need to improve the Rating logic
 And Once webApp is done we would like to convert it to the Mobile App.
 
-Issue Tracker/Bug Tracker: 
+Issue Tracker/Bug Tracker: https://github.com/01akanksha/AppartmentRater/blob/master/Issue%20Tracker.xlsx
 
 FINAL PRESENTATION:
 https://github.com/01akanksha/AppartmentRater/blob/master/ApartmentRater.pptx
