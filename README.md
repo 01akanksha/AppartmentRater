@@ -33,6 +33,7 @@ The source code can be found at the following repository Link for repository:
 Link:https://github.com/01akanksha/AppartmentRater/
 
 #User Manual(With Build Instructions)
+https://github.com/01akanksha/AppartmentRater/blob/master/UserManual
 https://github.com/01akanksha/AppartmentRater/blob/master/UserManualAndBuildInstructions.docx 
 
 #Pre-requisites:
