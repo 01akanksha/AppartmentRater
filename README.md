@@ -34,7 +34,7 @@ Link:https://github.com/01akanksha/AppartmentRater/
 
 #User Manual(With Build Instructions)
 https://github.com/01akanksha/AppartmentRater/blob/master/UserManual
-https://github.com/01akanksha/AppartmentRater/blob/master/UserManualAndBuildInstructions.docx 
+https://github.com/01akanksha/AppartmentRater/blob/master/UserManualAndBuildInstructions.pdf
 
 #Pre-requisites:
 You should have -
