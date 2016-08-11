@@ -11,8 +11,10 @@ This webapp is helpfull in finding the right apartment by comparing various apar
 Firstly you have to login the app by entering username and password then you have to choose the area in which you are looking for the apartment.then you have to enter number of beds and number of baths and the you will be able to see the apartments in your choosen location.Here you can compare various features and select your apartment.The viewer can compare, rate and book(hold) the apartment and can pay after viewing it actually..We did Pair Programming and we are using access database and Java REST API (Servlets and jsp) to host the application we have used the GlassFish.And we have used the MIT license.
 
 #REFERENCES:
+For Data-
 http://www.elevatetosequoia.com/apartments/or/beaverton/center-pointe-apartment-homes/floor-plans#/bedrooms
 https://www.forrent.com/apartment-community-profile/1006903
+Stack overflow helped a lot to resolve many issues
 
 #Author:
 Akanksha parashar and Smitha mandhani
