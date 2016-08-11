@@ -1,7 +1,11 @@
+<!--# Copyright (c) 2016 Akanksha and Smitha
+# This code is available under the "MIT License".
+# Please see the file LICENSE in this distribution
+# for license terms -->
 <%-- 
     Document   : login
-    Created on : Jul 29, 2016, 8:30:03 PM
     Author     : A
+    Design for login page
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

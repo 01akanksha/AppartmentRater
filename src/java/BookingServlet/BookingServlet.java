@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*# Copyright (c) 2016 Akanksha and Smitha
+*# This code is available under the "MIT License".
+*# Please see the file LICENSE in this distribution
+*# for license terms 
  */
 package BookingServlet;
 
@@ -22,7 +23,7 @@ import javax.mail.internet.*;
 import javax.servlet.RequestDispatcher;
 
 /**
- *
+ *Servlet to book the Apartment
  * @author A
  */
 @WebServlet(name = "BookingServlet", urlPatterns = {"/BookingServlet"})
@@ -64,7 +65,7 @@ private static final long serialVersionUID = 1L;
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
-     *
+     *Fetches all the Areas and Beds size to be populated into the dropdown for further search
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -126,7 +127,7 @@ private static final long serialVersionUID = 1L;
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     *
+     * Books the Apartment by inserting all the values reading from the jsp page into the Database
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs

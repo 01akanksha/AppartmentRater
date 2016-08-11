@@ -1,7 +1,11 @@
+<!--# Copyright (c) 2016 Akanksha and Smitha
+# This code is available under the "MIT License".
+# Please see the file LICENSE in this distribution
+# for license terms -->
 <%-- 
-    Document   : Booking
-    Created on : Aug 4, 2016, 6:34:31 PM
+    Document   : Booking   
     Author     : A
+    Design for Booking page
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

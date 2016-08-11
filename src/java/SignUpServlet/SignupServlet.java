@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*# Copyright (c) 2016 Akanksha and Smitha
+*# This code is available under the "MIT License".
+*# Please see the file LICENSE in this distribution
+*# for license terms 
  */
 package SignUpServlet;
 
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet for new sign up
  * @author A
  */
 @WebServlet(name = "SignupServlet", urlPatterns = {"/SignupServlet"})
@@ -75,7 +76,7 @@ public class SignupServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     *
+     * if the signup details are valid insert those to the database and then navigates to the login page
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs

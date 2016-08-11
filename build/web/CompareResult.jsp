@@ -1,7 +1,11 @@
+<!--# Copyright (c) 2016 Akanksha and Smitha
+# This code is available under the "MIT License".
+# Please see the file LICENSE in this distribution
+# for license terms -->
 <%-- 
-    Document   : CompareResult
-    Created on : Aug 8, 2016, 10:35:16 PM
+    Document   : CompareResult    
     Author     : A
+    Design for Compare Display Result page
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

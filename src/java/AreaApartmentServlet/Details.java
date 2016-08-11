@@ -1,11 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*# Copyright (c) 2016 Akanksha and Smitha
+*# This code is available under the "MIT License".
+*# Please see the file LICENSE in this distribution
+*# for license terms 
  */
 package AreaApartmentServlet;
 /**
- *
+ *Class to set all the properties of the Apartment
  * @author A
  */
 public class Details {

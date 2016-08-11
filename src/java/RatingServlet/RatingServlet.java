@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*# Copyright (c) 2016 Akanksha and Smitha
+*# This code is available under the "MIT License".
+*# Please see the file LICENSE in this distribution
+*# for license terms 
  */
 package RatingServlet;
 
@@ -23,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet used to rate and insert value to the database(Update)
  * @author A
  */
 @WebServlet(name = "RatingServlet", urlPatterns = {"/RatingServlet"})
@@ -63,8 +64,8 @@ public class RatingServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP <code>GET</code> method.
-     *
+     * Handles the HTTP <code>GET</code> method
+     * Take all the values from compare or search page and navigates to the rating jsp
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -90,7 +91,7 @@ public class RatingServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     *
+     * On click of rating button click update the rate field and then insert value to the table
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs

@@ -1,7 +1,11 @@
+<!--# Copyright (c) 2016 Akanksha and Smitha
+# This code is available under the "MIT License".
+# Please see the file LICENSE in this distribution
+# for license terms -->
 <%-- 
-    Document   : Rating
-    Created on : Aug 9, 2016, 9:43:42 AM
+    Document   : Rating  
     Author     : A
+    Design for Rating page
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

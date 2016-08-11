@@ -1,7 +1,11 @@
+<!--# Copyright (c) 2016 Akanksha and Smitha
+# This code is available under the "MIT License".
+# Please see the file LICENSE in this distribution
+# for license terms -->
 <%-- 
     Document   : Signup
-    Created on : Jul 31, 2016, 3:37:56 PM
     Author     : A
+    Design for Signup page
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -1,8 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*# Copyright (c) 2016 Akanksha and Smitha
+*# This code is available under the "MIT License".
+*# Please see the file LICENSE in this distribution
+*# for license terms 
  */
+
 package CompareServlet;
 
 import AreaApartmentServlet.Details;
@@ -22,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ *Servlet to display result of the comparision
  * @author A
  */
 @WebServlet(name = "CompareServlet", urlPatterns = {"/CompareServlet"})
@@ -71,7 +73,7 @@ public class CompareServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     *
+     * Fetches the Comparision results from the database and navigates to the compare result jsp page
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs

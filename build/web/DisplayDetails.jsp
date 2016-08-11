@@ -1,7 +1,11 @@
+<!--# Copyright (c) 2016 Akanksha and Smitha
+# This code is available under the "MIT License".
+# Please see the file LICENSE in this distribution
+# for license terms -->
 <%-- 
-    Document   : DisplayDetails
-    Created on : Aug 2, 2016, 10:34:16 AM
+    Document   : DisplayDetails    
     Author     : A
+    Design for Search Display Result page
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>

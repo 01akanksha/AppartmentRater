@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*# Copyright (c) 2016 Akanksha and Smitha
+*# This code is available under the "MIT License".
+*# Please see the file LICENSE in this distribution
+*# for license terms 
  */
 package DetailsServlet;
 
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Servlet to display the result on the basis of search criteria and then navigate to either book or rate page 
  * @author A
  */
 @WebServlet(name = "DetailsServlet", urlPatterns = {"/DetailsServlet"})
@@ -50,7 +51,7 @@ public class DetailsServlet extends HttpServlet {
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
-     *
+     * takes all teh values and navigate to booking page
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs

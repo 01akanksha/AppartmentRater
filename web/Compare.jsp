@@ -1,7 +1,11 @@
+<!--# Copyright (c) 2016 Akanksha and Smitha
+# This code is available under the "MIT License".
+# Please see the file LICENSE in this distribution
+# for license terms -->
 <%-- 
-    Document   : Compare
-    Created on : Aug 7, 2016, 4:53:14 PM
+    Document   : Compare    
     Author     : A
+    Design for Compare Select Box page
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

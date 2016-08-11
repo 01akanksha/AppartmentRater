@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*# Copyright (c) 2016 Akanksha and Smitha
+*# This code is available under the "MIT License".
+*# Please see the file LICENSE in this distribution
+*# for license terms 
  */
 package LoginServlet;
 
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 
 /**
- *
+ * Login Logic and then fetching the details of all areas and no of beds and navigating to the drop down jsp 
  * @author A
  */
 @WebServlet(name = "loginServlet", urlPatterns = {"/loginServlet"})
@@ -76,7 +77,7 @@ public class loginServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     *
+     * Checks of the entered login details are valid if yes then goes to the next page 
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
